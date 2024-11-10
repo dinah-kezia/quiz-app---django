@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Choose a Subject</h2>
+        <div class="subjects-container">
+            <div class="subject-box">
+                <a href="{% url 'quiz' 1 %}">
+                    <span class="subject-title">Machine Learning</span>
+                </a>
+            </div>
+            <div class="subject-box">
+                <a href="{% url 'quiz' 2 %}">
+                    <span class="subject-title">NLP</span>
+                </a>
+            </div>
+            <div class="subject-box">
+                <a href="{% url 'quiz' 3 %}">
+                    <span class="subject-title">Deep Learning</span>
+                </a>
+            </div>
+            <div class="subject-box">
+                <a href="{% url 'quiz' 4 %}">
+                    <span class="subject-title">Computer Vision</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

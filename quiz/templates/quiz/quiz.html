@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ form.subject.name }} Quiz</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="quiz-container">
+                {% for question in form %}
+                    <div class="question-box">
+                        <p class="question-text">{{ forloop.counter }}. {{ question.label }}</p>
+                        <div class="choices">
+                            {{ question }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="submit-btn">
+                <button type="submit">Submit Quiz</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
